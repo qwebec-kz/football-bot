@@ -123,7 +123,7 @@ def get_live_matches():
 
 # ================= TELEGRAM =================
 def send_to_telegram(match, stats):
-    TSh, TSaw, SOTh, SOTaw, CONh, CONaw, YCh, YCaw = stats
+    TSh, TSaw, SOTh, SOTaw, CONh, CONaw = stats
 
     text = (
         "✅ <b>ПОДХОДЯЩИЙ МАТЧ</b>\n"
@@ -172,7 +172,7 @@ while True:
         if not (
             (TSh + TSaw) >= 11 and
             (SOTh + SOTaw) >= 4 and
-            (CONh + CONaw) >= 3 and
+            (CONh + CONaw) >= 3
         
         ):
             continue
@@ -182,6 +182,7 @@ while True:
         save_sent_match(match["id"])
 
     time.sleep(CHECK_INTERVAL)
+
 
 
 
