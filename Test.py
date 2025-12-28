@@ -133,7 +133,7 @@ def send_to_telegram(match, stats):
         f"Всего ударов: {TSh + TSaw}\n"
         f"Удары в створ: {SOTh + SOTaw}\n"
         f"Угловые: {CONh + CONaw}\n"
-        f"Желтые карточки: {YCh + YCaw}\n\n"
+     
         f"Начало: {match['start_time']}"
     )
 
@@ -167,13 +167,13 @@ while True:
             )
             continue
 
-        TSh, TSaw, SOTh, SOTaw, CONh, CONaw, YCh, YCaw = stats
+        TSh, TSaw, SOTh, SOTaw, CONh, CONaw  = stats
 
         if not (
             (TSh + TSaw) >= 3 and
             (SOTh + SOTaw) >= 3 and
             (CONh + CONaw) >= 3 and
-            (YCh + YCaw) >= 0
+        
         ):
             continue
 
@@ -182,6 +182,7 @@ while True:
         save_sent_match(match["id"])
 
     time.sleep(CHECK_INTERVAL)
+
 
 
 
