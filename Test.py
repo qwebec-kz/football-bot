@@ -87,11 +87,11 @@ def get_live_matches():
             if fields.get("AB") != "2" or fields.get("AI") != "y":
                 continue
 
-            home_score = fields.get("AG", "4")
+            home_score = fields.get("AG", "0")
             away_score = fields.get("AH", "0")
 
             if not (
-                home_score == "4"
+                home_score == "0"
                 and away_score == "0"
                 and fields.get("AC") in ("38", "13")
             ):
@@ -170,10 +170,10 @@ while True:
         TSh, TSaw, SOTh, SOTaw, CONh, CONaw, YCh, YCaw = stats
 
         if not (
-            (TSh + TSaw) >= 11 and
-            (SOTh + SOTaw) >= 4 and
+            (TSh + TSaw) >= 3 and
+            (SOTh + SOTaw) >= 3 and
             (CONh + CONaw) >= 3 and
-            (YCh + YCaw) >= 1
+            (YCh + YCaw) >= 0
         ):
             continue
 
@@ -182,5 +182,6 @@ while True:
         save_sent_match(match["id"])
 
     time.sleep(CHECK_INTERVAL)
+
 
 
