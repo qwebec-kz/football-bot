@@ -33,7 +33,7 @@ def parse_statistics(match_id):
     TSh = TSaw = None
     SOTh = SOTaw = None
     CONh = CONaw = None
-    YCh = YCaw = None
+    
 
     if "SE÷1-й тайм" in t:
         h1 = t.split("SE÷1-й тайм")[1].split("~SE÷")[0]
@@ -51,16 +51,13 @@ def parse_statistics(match_id):
             if "SG÷Угловые" in r:
                 CONh = to_int(r.split("SH÷")[1].split("¬")[0])
                 CONaw = to_int(r.split("SI÷")[1].split("¬")[0])
-
-            if "SG÷Желтые карточки" in r:
-                YCh = to_int(r.split("SH÷")[1].split("¬")[0])
-                YCaw = to_int(r.split("SI÷")[1].split("¬")[0])
+ 
 
     stats = (
         nz(TSh), nz(TSaw),
         nz(SOTh), nz(SOTaw),
         nz(CONh), nz(CONaw),
-        nz(YCh), nz(YCaw)
+    
     )
 
     # ❗ если статистики нет вообще — пропускаем матч
@@ -68,3 +65,4 @@ def parse_statistics(match_id):
         return None
 
     return stats
+
