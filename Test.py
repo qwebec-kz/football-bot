@@ -10,7 +10,7 @@ import telebot
 import Stats
 
 # ================= НАСТРОЙКИ =================
-CHECK_INTERVAL = 180  # 3 минуты
+CHECK_INTERVAL = 5  # 3 минуты
 KZ_TZ = ZoneInfo("Asia/Almaty")
 SENT_FILE = "sent_matches.txt"
 
@@ -182,6 +182,7 @@ while True:
         save_sent_match(match["id"])
 
     time.sleep(CHECK_INTERVAL)
+
 
 
 
