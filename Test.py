@@ -87,7 +87,7 @@ def get_live_matches():
             if fields.get("AB") != "2" or fields.get("AI") != "y":
                 continue
 
-            home_score = fields.get("AG", "0")
+            home_score = fields.get("AG", "4")
             away_score = fields.get("AH", "0")
 
             if not (
@@ -182,4 +182,5 @@ while True:
         save_sent_match(match["id"])
 
     time.sleep(CHECK_INTERVAL)
+
 
