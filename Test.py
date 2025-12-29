@@ -127,7 +127,7 @@ def send_to_telegram(match, stats):
     TSh, TSaw, SOTh, SOTaw, CONh, CONaw = stats
 
     text = (
-        "✅ <b>ПОДХОДЯЩИЙ МАТЧ</b>\n"
+        "✅ <b>ПОДХОДЯЩИЙ МАТЧ (GitHub)</b>\n"
         f"Лига: {match['league']}\n"
         f"{match['home']} vs {match['away']}\n"
         f"Счёт: {match['score']}\n\n"
@@ -174,6 +174,7 @@ while True:
         logger.warning("🧹 sent_matches очищен")
 
     time.sleep(CHECK_INTERVAL + random.randint(-30, 60))
+
 
 
 
