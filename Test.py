@@ -12,7 +12,7 @@ import telebot
 import Stats
 
 # ================= НАСТРОЙКИ =================
-CHECK_INTERVAL = 180
+CHECK_INTERVAL = 900
 MAX_SENT_MATCHES = 1000
 KZ_TZ = ZoneInfo("Asia/Almaty")
 SENT_FILE = "sent_matches.txt"
